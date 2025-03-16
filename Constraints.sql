@@ -1,0 +1,23 @@
+CREATE DATABASE constraints;
+USE constraints;
+
+CREATE TABLE temp1(
+	id INT UNIQUE 
+);
+
+-- THIS IS ADDED EASILY 
+INSERT INTO temp1 VALUES(101);
+
+-- THIS IS NOT ADDED BECAUSE I WAS MENTIONED THE id AS UNIQUE
+INSERT INTO temp1 VALUES(101);
+
+
+-- DEFAULT CONSTRANTS
+CREATE TABLE default_constrants(
+	id INT,
+    salary INT DEFAULT 25000
+);
+
+INSERT INTO default_constrants (id) VALUES (101);
+SELECT * FROM default_constrants;
+ 

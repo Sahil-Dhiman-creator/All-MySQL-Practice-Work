@@ -1,0 +1,65 @@
+CREATE DATABASE where_clause;
+USE where_clause;
+
+CREATE TABLE student(
+	rollno INT PRIMARY KEY,
+    name VARCHAR(50),
+    marks VARCHAR(3),
+    grade VARCHAR(1),
+    city VARCHAR(20)
+);
+
+INSERT INTO student
+(rollno, name, marks, grade, city)
+VALUES
+(101, "anil", 78, "C", "Pune"),
+(102, "bhumika",93, "A", "Mumbai"),
+(103, "chetan",85, "B", "Mumbai"),
+(104, "dhruv",96, "A", "Delhi"),
+(105, "emanuel",12, "F", "Delhi");
+
+-- CONDITION FIRST OF WHERE
+SELECT * 
+FROM student 
+WHERE marks > 80;
+
+-- CONDITION SECOND OF WHERE
+SELECT *
+FROM student
+WHERE CITY = "MUMBAI";
+
+-- CONDITION THIRD OF WHERE
+SELECT *
+FROM student
+WHERE marks > 80 AND CITY = "MUMBAI";
+
+----------------------------- OPERATOR'S --------------------------------
+-- AND OPERATOR 
+SELECT *
+FROM student
+WHERE marks > 90 AND city = "MUMBAI";
+
+-- OR OPERATOR
+-- ANY ONE CONDITION IF FULL-FILL THEN THE RESULT IS SHOWN
+SELECT *
+FROM student
+WHERE marks >90 OR city = "MUMBAI";
+
+-- BETWEEN OPERATOR
+-- THIS OPERATOR IS USE TO SELECT THE DATA FROM THE TABLE IN BETWEEN THE RANGE OF TWO VALUES
+SELECT *
+FROM student
+WHERE marks BETWEEN 70 AND 90;
+
+-- IN OPERATOR
+-- THIS OPERATOR IS USE TO MATCHES THE ANY VALUE IN THE LIST AND THE FULL-INFORMATION AS A OUTPUT
+SELECT *
+FROM student
+WHERE city IN ("DELHI","MUMBAI");
+
+-- NOT OPERATOR
+-- THIS OPERATOR IS USE TO SHOW THE UNSELECTED DATA FROM THE LIST
+SELECT *
+FROM student
+WHERE city NOT IN ("DELHI","MUMBAI");
+
